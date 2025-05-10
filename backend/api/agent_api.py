@@ -2,6 +2,7 @@ from fastapi import FastAPI, Request
 from fastapi.responses import JSONResponse
 from fastapi.exceptions import RequestValidationError
 from starlette.exceptions import HTTPException as StarletteHTTPException
+from fastapi.middleware.cors import CORSMiddleware
 
 from models.available_agents import AvailableAgents
 from models.agent_response import AgentResponse
@@ -21,7 +22,13 @@ class AgentAPI:
         """
         self.request_dispatcher = RequestDispatcher(conversation_store=conversation_store)
         self.app = app if app is not None else FastAPI()
-
+        self.app.add_middleware(
+            CORSMiddleware,
+            allow_origins=["*"],
+            allow_methods=["*"],
+            allow_headers=["*"],
+            allow_credentials=True,
+        )
         self.setup_routes()
         self.setup_error_handlers()
 

@@ -1,0 +1,84 @@
+html, body, #root {
+    font-family: 'Bogle', sans-serif; /* Apply the Bogle font globally */
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden; /* Prevent scrolling at the body level */
+
+  }
+  
+  .app-container {
+    display: flex;
+    flex-direction: column; /* Stack components vertically */
+    height: 100vh; /* Full viewport height */
+    overflow: hidden; /* Prevent scrolling */
+    width: 100%;
+  }
+  
+  .app-main-content {
+    display: flex; /* Side by side layout for left panel and canvas */
+    flex-direction: row;
+    flex: 1; /* Take remaining space after log window */
+    min-height: 0; /* Critical for flexbox to work correctly */
+    overflow: hidden;
+  }
+
+  .left-panel {
+    width: 200px;
+    background-color: #4b4b4b;
+    padding: 10px;
+  }
+  
+  .main-canvas {
+    flex: 1;
+    height: 100% !important; /* Override any other height settings */
+    background-color: #f5f5f5; /* Light grey background */
+    background-image: radial-gradient(circle, #ccc 1px, transparent 1px);
+    background-size: 20px 20px; /* Adjust the size of the dots */
+  
+  }
+  
+
+
+  .node-box {
+    padding: 8px;
+    margin-bottom: 8px;
+    background-color: white;
+    border: 1px solid #ccc;
+    cursor: grab;
+    border-radius: 4px;
+    text-align: left; /* Align text and icon to the left */
+    display: flex; /* Use flexbox for alignment */
+    align-items: center; /* Vertically align icon and text */
+  }
+  
+  .node-box-icon {
+    margin-right: 8px; /* Add spacing between the icon and the text */
+    font-size: 1.2rem; /* Adjust icon size */
+    color: #4b4b4b; /* Icon color */
+  }
+
+  
+  .node-box.blue-text {
+    color: rgb(46, 111, 137); /* Apply blue text color */
+    font-weight: bold; /* Make text bold */
+  }
+
+  .line-break {
+    height: 1px;
+    margin: 10px 0;
+    background-color: #aaa; /* Light gray line */
+  }
+  
+  .react-flow__container {
+    height: 100% !important; /* Don't use calc here, we're using flex layout */
+  }
+
+
+  .agent-section-heading {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 600;
+  }

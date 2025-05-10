@@ -7,7 +7,6 @@ from models.custom_agent import CustomAgent
 
 class StoryTellerAgent(ChatCompletionAgent, CustomAgent):
     def __init__(self):
-        # Initialize the kernel
         kernel = Kernel()
         kernel.add_service(AzureChatCompletion())
         super().__init__(kernel=kernel, 
