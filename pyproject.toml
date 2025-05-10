@@ -9,6 +9,6 @@ dependencies = [
  "chainlit>=2.5.5",
  "fastapi[standard]>=0.115.12",
  "python-dotenv>=1.1.0",
- "semantic-kernel[azure]==1.26.1",
+ "semantic-kernel[azure]==1.29",
  "uvicorn>=0.34.2",
 ]

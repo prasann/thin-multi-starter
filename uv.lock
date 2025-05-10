@@ -3154,7 +3154,7 @@ wheels = [
 
 [[package]]
 name = "semantic-kernel"
-version = "1.26.1"
+version = "1.29.0"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "aiohttp" },
@@ -3176,9 +3176,9 @@ dependencies = [
     { name = "scipy" },
     { name = "websockets" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/4f/d0/54fef160db060a0b640688810fee86cfe47e158b071e65a1cd1b8c2b889b/semantic_kernel-1.26.1.tar.gz", hash = "sha256:0540b6754d21e6a8d2426ae3328cc29ddb702ecd03dccaebdc5f4c1a67ab54f0", size = 458068 }
+sdist = { url = "https://files.pythonhosted.org/packages/51/fb/f12134e866867396d7706f9dff232900ec682240c8c646aab37f02479ef8/semantic_kernel-1.29.0.tar.gz", hash = "sha256:7a8e9da374c7ecc58f17aceda104d89aa35b8f5e21d080c2839a93c5b8c94450", size = 498588 }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/1a/5d/870ca8678cd6b96763e37093924cb44a9c3305773a6bec8a44340178b625/semantic_kernel-1.26.1-py3-none-any.whl", hash = "sha256:102239d294c54146988bc781e722bf373fed3ef7ee66572fa3c1880d47c55d2a", size = 782666 },
+    { url = "https://files.pythonhosted.org/packages/fc/86/89e844020fbd0d37a2c60da611e2c3ee05fbf8dc0b38993cf804cc3c12d9/semantic_kernel-1.29.0-py3-none-any.whl", hash = "sha256:5157fb617ad5c069822db62906957396521d8813c24ce2057e7f652c53c88edf", size = 818108 },
 ]
 
 [package.optional-dependencies]
@@ -3187,7 +3187,6 @@ azure = [
     { name = "azure-ai-projects" },
     { name = "azure-core-tracing-opentelemetry" },
     { name = "azure-cosmos" },
-    { name = "azure-identity" },
     { name = "azure-search-documents" },
 ]
 
@@ -3289,7 +3288,7 @@ requires-dist = [
     { name = "chainlit", specifier = ">=2.5.5" },
     { name = "fastapi", extras = ["standard"], specifier = ">=0.115.12" },
     { name = "python-dotenv", specifier = ">=1.1.0" },
-    { name = "semantic-kernel", extras = ["azure"], specifier = "==1.26.1" },
+    { name = "semantic-kernel", extras = ["azure"], specifier = "==1.29" },
     { name = "uvicorn", specifier = ">=0.34.2" },
 ]
 
