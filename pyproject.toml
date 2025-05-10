@@ -1,0 +1,12 @@
+[project]
+name = "thin-multi-agent-sample"
+version = "0.1.0"
+description = "Sample application to demonstrate multi-agent architecture"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+ "chainlit>=2.5.5",
+ "fastapi>=0.115.12",
+ "semantic-kernel>=1.29.0",
+ "uvicorn>=0.34.2",
+]
