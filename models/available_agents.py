@@ -29,7 +29,7 @@ class AvailableAgents:
         agent = cls.agents.get(name)
         if agent:
             agent_factory = agent["factory"]()
-            if asyncio.iscoroutine(agent_factory): # check if the factory is a coroutine
+            if asyncio.iscoroutine(agent_factory):
                 return await agent_factory
             else:
                 return agent_factory

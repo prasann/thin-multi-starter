@@ -5,8 +5,10 @@ description = "Sample application to demonstrate multi-agent architecture"
 readme = "README.md"
 requires-python = ">=3.10"
 dependencies = [
+ "azure-search-documents==11.6.0b4",
  "chainlit>=2.5.5",
- "fastapi>=0.115.12",
- "semantic-kernel>=1.29.0",
+ "fastapi[standard]>=0.115.12",
+ "python-dotenv>=1.1.0",
+ "semantic-kernel[azure]==1.26.1",
  "uvicorn>=0.34.2",
 ]

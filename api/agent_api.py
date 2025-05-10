@@ -1,15 +1,13 @@
 from fastapi import FastAPI, Request
 from fastapi.responses import JSONResponse
 from fastapi.exceptions import RequestValidationError
-from fastapi.middleware.cors import CORSMiddleware
 from starlette.exceptions import HTTPException as StarletteHTTPException
 
-from app.models.available_agents import AvailableAgents
-from app.models.agent_response import AgentResponse
-from app.models.agent_request import AgentRequest
-from app.orchestrator.request_dispatcher import RequestDispatcher
-from app.models.available_agents import AvailableAgents
-from app.models.conversation_state import ConversationStateStore
+from models.available_agents import AvailableAgents
+from models.agent_response import AgentResponse
+from models.agent_request import AgentRequest
+from orchestrator.request_dispatcher import RequestDispatcher
+from models.conversation_state import ConversationStateStore
 
 
 class AgentAPI:

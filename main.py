@@ -1,16 +1,18 @@
 from fastapi import FastAPI
-from pydantic import BaseModel
-from chainlit.utils import mount_chainlit
+from agents.storyteller_chat_agent import StoryTellerAgent
+from api.agent_api import AgentAPI
+from models.available_agents import AvailableAgents
+from models.conversation_state import InMemoryConversationStateStore
+from dotenv import load_dotenv
 
 app = FastAPI()
 
-class InvokeRequest(BaseModel):
-    message: str
+load_dotenv(override=True)
 
-@app.post("/invoke") 
-async def invoke(request_data: InvokeRequest):  
-    print(f"Received message: {request_data.message}")
-    return f"Received your message: {request_data.message}"
+conversation_store = InMemoryConversationStateStore()
 
-# Mount Chainlit UI
-mount_chainlit(app=app, target="chainlit_ui.py", path="/agents")
+AvailableAgents.add_agent("story_teller", lambda: StoryTellerAgent(), StoryTellerAgent.what_can_i_do(), "SK")
+
+agent_api = AgentAPI(conversation_store=conversation_store)
+
+app = agent_api.app
