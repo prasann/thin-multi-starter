@@ -1,6 +1,7 @@
 from fastapi import FastAPI
-from agents.city_culture_agent import CityCultureGuideAgent
-from agents.copilot_studio.tour_guide_agent import TourGuideAgent
+from agents.culture_guru_agent import CultureGuruAgent
+from agents.copilot_studio.explorer_guide_agent import ExplorerGuideAgent
+from agents.azure_ai_agents.culinary_advisor_agent import CulinaryAdvisorAgent
 from api.agent_api import AgentAPI
 from telemetry import telemetry
 from telemetry.tracing_middleware import setup_tracing
@@ -22,8 +23,9 @@ telemetry.setup()
 
 conversation_store = InMemoryConversationStateStore()
 
-AvailableAgents.add_agent("city_culture_guide", lambda: CityCultureGuideAgent(), CityCultureGuideAgent.what_can_i_do(), "SK")
-AvailableAgents.add_agent("tour_guide", lambda: TourGuideAgent(), TourGuideAgent.what_can_i_do(), "CPS")
+AvailableAgents.add_agent("culture_guru", lambda: CultureGuruAgent(), CultureGuruAgent.what_can_i_do(), "SK")
+AvailableAgents.add_agent("explorer_guide", lambda: ExplorerGuideAgent(), ExplorerGuideAgent.what_can_i_do(), "MCS")
+AvailableAgents.add_agent("culinary_advisor", lambda: CulinaryAdvisorAgent().initialize_agent(), CulinaryAdvisorAgent.what_can_i_do(), "AZ")
 
 agent_api = AgentAPI(conversation_store=conversation_store, app=app)
 

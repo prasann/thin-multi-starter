@@ -29,7 +29,11 @@ class SingleChatStrategy(ChatStrategy):
         
         # Create agent instance
         agent_instance = await AvailableAgents.get_agent(agent_name)
-
+        if not agent_instance:
+            raise HTTPException(
+                status_code=404,
+                detail=f"Agent {agent_name} not found in agent registry."
+            )
         # Get agent thread from conversation state
         conversation_state = self.conversation_store.init_state(id=conversation_id)
         thread = conversation_state.get_thread(id=agent_name)

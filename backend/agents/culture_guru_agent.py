@@ -5,13 +5,13 @@ from semantic_kernel.connectors.ai.open_ai import AzureChatCompletion
 from models.custom_agent import CustomAgent
 
 
-class CityCultureGuideAgent(ChatCompletionAgent, CustomAgent):
+class CultureGuruAgent(ChatCompletionAgent, CustomAgent):
     def __init__(self):
         kernel = Kernel()
         kernel.add_service(AzureChatCompletion())
         super().__init__(
             kernel=kernel,
-            name="city_culture_guide",
+            name="culture_guru",
             description=self.what_can_i_do(),
             instructions="""You are a city culture guide. When given a destination city, provide helpful cultural guidance 
             including local customs, etiquette, dos and don'ts, important cultural norms, and practical tips for visitors.
