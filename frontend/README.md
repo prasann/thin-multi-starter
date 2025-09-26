@@ -1,66 +1,45 @@
-# React Flow App
+# Frontend - Multi-Agent System Interface
 
-This project is a React application that allows users to drag and drop boxes from a left panel into a main canvas. The boxes can be connected using arrows, providing a visual representation of relationships between different elements.
+The React-based frontend for the Thin Multi-Agent System, providing an interactive visual interface for managing and visualizing AI agent relationships.
 
-## Features
+## Key Features
 
-- Drag and drop functionality for boxes
-- Connect boxes with arrows
-- Responsive design
+- **Visual Agent Canvas**: Drag and drop interface for agent visualization
+- **Real-time Chat Panel**: Interactive communication with AI agents
+- **Agent Relationship Mapping**: Connect agents with visual arrows
+- **Responsive Design**: Works across different screen sizes
+- **Integration Ready**: Seamlessly connects to the FastAPI backend
 
-## Getting Started
+## Quick Start
 
-To get a copy of this project up and running on your local machine, follow these steps:
+For detailed setup and running instructions, see the main project [SETUP.md](../SETUP.md).
 
-### Prerequisites
+### Basic Usage
 
-- Node.js (version 14 or higher)
-- npm (version 6 or higher)
+1. Install dependencies: `npm install`
+2. Start development server: `npm start`
+3. Open browser: `http://localhost:3000`
 
-### Installation
+## Components
 
-1. Clone the repository:
-   ```
-   git clone https://github.com/yourusername/react-flow-app.git
-   ```
-
-2. Navigate to the project directory:
-   ```
-   cd react-flow-app
-   ```
-
-3. Install the dependencies:
-   ```
-   npm install
-   ```
-
-### Running the Application
-
-To start the development server, run:
-```
-npm start
-```
-
-This will open the application in your default web browser at `http://localhost:3000`.
-
-### Building for Production
-
-To create a production build of the application, run:
-```
-npm run build
-```
-
-This will generate an optimized build in the `build` folder.
+- `ChatPanel.tsx` - Chat interface with AI agents
+- `LeftPanel.tsx` - Draggable agent selector
+- `MainCanvas.tsx` - Visual canvas for agent relationships
+- `NodeBox.tsx` - Individual agent representation
+- `LogWindow.tsx` - System logging and debugging
 
 ## Usage
 
-- Use the left panel to drag boxes onto the main canvas.
-- Click and drag from the edges of the boxes to create connections between them.
+- Drag agent boxes from the left panel to the main canvas
+- Connect agents by drawing arrows between them
+- Use the chat panel to interact with individual agents
+- View system logs in the logging window
 
-## Contributing
+## Technology Stack
 
-Contributions are welcome! Please open an issue or submit a pull request for any improvements or features you'd like to add.
+- React 18+ with TypeScript
+- React Flow for canvas interactions
+- Context API for state management
+- CSS Modules for styling
 
-## License
-
-This project is licensed under the MIT License. See the LICENSE file for details.
+For complete project documentation, see the main [README.md](../README.md).

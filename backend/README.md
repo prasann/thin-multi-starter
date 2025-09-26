@@ -1,23 +1,35 @@
-# Simple Chainlit + FastAPI Demo
+# Backend - Multi-Agent System API
 
-A minimalist demo showing how to integrate a Chainlit UI with a FastAPI backend.
+The backend component of the Thin Multi-Agent System, built with FastAPI and featuring specialized AI agents for travel and dining recommendations.
 
-## Running the Demo
+## Key Components
 
-1. Install dependencies:
-   ```
-   pip install -r requirements.txt
-   ```
+- **Agent Orchestration**: Coordinate multiple AI agents (Copilot Studio & Azure AI Foundry)
+- **REST API**: FastAPI-based endpoints for agent communication
+- **Intent Routing**: Automatically route user queries to appropriate agents
+- **Chainlit Integration**: Interactive chat interface
+- **Telemetry**: Built-in monitoring and tracing capabilities
 
-2. Run the application:
-   ```
-   uvicorn main:app --reload
-   ```
+## Quick Start
 
-3. Open your browser and navigate to:
-   ```
-   http://localhost:8000/chainlit
-   ```
+For detailed setup and running instructions, see the main project [SETUP.md](../SETUP.md).
 
-The demo allows you to send messages from the Chainlit UI to a FastAPI backend endpoint.
+### Basic Usage
+
+1. Install dependencies: `pip install -r requirements.txt`
+2. Configure environment variables (see SETUP.md)
+3. Run: `uvicorn main:app --reload`
+4. Access API docs: `http://localhost:8000/docs`
+5. Access Chainlit UI: `http://localhost:8000/chainlit`
+
+## Project Structure
+
+- `agents/` - AI agent implementations
+- `api/` - REST API endpoints
+- `models/` - Data models and schemas
+- `orchestrator/` - Agent coordination logic
+- `telemetry/` - Monitoring and tracing
+- `utils/` - Utility functions
+
+For complete project documentation, see the main [README.md](../README.md).
 
